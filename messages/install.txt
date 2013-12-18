@@ -1,0 +1,6 @@
+SublimeLinter-phpmd
+-------------------------------
+
+This linter plugin for SublimeLinter provides an interface to phpmd.
+
+For more information, please see https://github.com/hd-deman/SublimeLinter-phpmd.
