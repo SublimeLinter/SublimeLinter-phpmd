@@ -8,9 +8,9 @@ This linter plugin for [SublimeLinter](https://github.com/SublimeLinter/SublimeL
 ### Linter installation
 Before installing this plugin, you must ensure that `phpmd` is installed on your system. To install `phpmd`, do the following:
 
-1. Install php.
+1. Install [php](http://php.net).
 
-2. Install pear.
+2. Install [pear](http://pear.php.net).
 
 3. Install `phpmd` by typing the following in a terminal:
    ```
