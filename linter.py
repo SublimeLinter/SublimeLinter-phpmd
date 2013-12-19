@@ -17,7 +17,7 @@ class Phpmd(Linter):
 
     """Provides an interface to phpmd."""
 
-    syntax = ('php', 'html')
+    syntax = ('php', 'html', 'html 5')
     regex = (
         r'(?P<filename>.+):(?P<line>\d+)'
         r'(?P<message>.+)$'
