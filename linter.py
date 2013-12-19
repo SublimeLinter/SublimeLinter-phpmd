@@ -23,9 +23,7 @@ class Phpmd(Linter):
         r'(?P<message>.+)$'
     )
     executable = 'phpmd'
-    selectors = {
-        'html': 'source.php.embedded.block.html'
-    }
+
     tempfile_suffix = 'php'
 
     def cmd(self):
