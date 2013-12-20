@@ -23,7 +23,6 @@ class Phpmd(Linter):
         r'(?P<message>.+)$'
     )
     executable = 'phpmd'
-
     tempfile_suffix = 'php'
 
     def cmd(self):
