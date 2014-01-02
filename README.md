@@ -4,6 +4,7 @@ SublimeLinter-phpmd
 This linter plugin for [SublimeLinter](http://sublimelinter.readthedocs.org) provides an interface to [phpmd](http://phpmd.org/documentation/index.html). It will be used with files that have the “PHP”, “HTML” and “HTML5” syntax.
 
 ## Installation
+SublimeLinter 3 must be installed in order to use this plugin. If SublimeLinter 3 is not installed, please follow the instructions [here](http://sublimelinter.readthedocs.org/en/latest/installation.html).
 
 ### Linter installation
 Before installing this plugin, you must ensure that `phpmd` is installed on your system. To install `phpmd`, do the following:
