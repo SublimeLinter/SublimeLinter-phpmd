@@ -19,12 +19,13 @@ class Phpmd(Linter):
 
     syntax = ('php', 'html', 'html 5')
     cmd = 'phpmd @ text'
-    executable = 'phpmd'
     regex = (
         r'(?P<filename>.+):(?P<line>\d+)'
         r'(?P<message>.+)$'
     )
+    tempfile_suffix = 'php'
     defaults = {
         '@rulesets:,': 'cleancode,codesize,controversial,design,naming,unusedcode'
     }
-    tempfile_suffix = 'php'
+    inline_overrides = 'rulesets'
+    comment_re = r'\s*<!--'
