@@ -18,17 +18,13 @@ class Phpmd(Linter):
     """Provides an interface to phpmd."""
 
     syntax = ('php', 'html', 'html 5')
+    cmd = 'phpmd @ text'
+    executable = 'phpmd'
     regex = (
         r'(?P<filename>.+):(?P<line>\d+)'
         r'(?P<message>.+)$'
     )
-    executable = 'phpmd'
+    defaults = {
+        '@rulesets:,': 'cleancode,codesize,controversial,design,naming,unusedcode'
+    }
     tempfile_suffix = 'php'
-
-    def cmd(self):
-        """
-        Return a string with the command line to execute.
-        """
-        command = ['phpmd', self.filename, 'text', 'cleancode,codesize,controversial,design,naming,unusedcode']
-
-        return command
