@@ -31,21 +31,6 @@ To install via Package Control, do the following:
 1. When the plugin list appears, type `phpmd`. Among the entries you should see `SublimeLinter-phpmd`. If that entry is not highlighted, use the keyboard or mouse to select it.
 
 ## Settings
-
-Add php path to `paths`. Go to `Preferences: SublimeLinter Settings - User` and add the following.
-```json
-{
-    "user": {
-        "paths": {
-            "linux": [],
-            "osx": [
-                "/usr/local/php5/bin/"
-            ],
-            "windows": []
-        }
-    }
-}
-```
 For general information on how SublimeLinter works with settings, please see [Settings](http://sublimelinter.readthedocs.org/en/latest/settings.html). For information on generic linter settings, please see [Linter Settings](http://sublimelinter.readthedocs.org/en/latest/linter_settings.html).
 
 ## Contributing
