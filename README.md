@@ -1,7 +1,7 @@
 SublimeLinter-phpmd
 =========================
 
-This linter plugin for [SublimeLinter](http://sublimelinter.readthedocs.org) provides an interface to [phpmd](http://phpmd.org/documentation/index.html). It will be used with files that have the “php”, “html” and “html5” syntax.
+This linter plugin for [SublimeLinter](http://sublimelinter.readthedocs.org) provides an interface to [phpmd](http://phpmd.org/documentation/index.html). It will be used with files that have the “PHP”, “HTML” and “HTML5” syntax.
 
 ## Installation
 
