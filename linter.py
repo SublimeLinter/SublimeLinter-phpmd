@@ -21,7 +21,7 @@ class Phpmd(Linter):
     cmd = 'phpmd @ text'
     regex = (
         r'(?P<filename>.+):(?P<line>\d+)'
-        r'(?P<message>.+)$'
+        r'\s*(?P<message>.+)$'
     )
     tempfile_suffix = 'php'
     defaults = {
