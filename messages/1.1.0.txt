@@ -1,15 +1,17 @@
 SublimeLinter-phpmd 1.1.0
 ---------------------------
 
-This version adds support for declaring per-project linter executable files.
-
-Example (*.sublime-project):
-{
-    "SublimeLinter": {
-        "linters": {
-            "phpmd": {
-                "cmd": "${project}/vendor/bin/phpmd"
+* Default message type to warning
+* This version adds support for declaring per-project linter executable files.
+  
+  Example (*.sublime-project):
+  
+    {
+        "SublimeLinter": {
+            "linters": {
+                "phpmd": {
+                    "cmd": "${project}/vendor/bin/phpmd"
+                }
             }
         }
     }
-}
