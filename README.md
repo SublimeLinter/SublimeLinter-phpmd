@@ -21,6 +21,16 @@ Before installing this plugin, you must ensure that `phpmd` is installed on your
    pear channel-discover pear.pdepend.org
    pear install --alldeps phpmd/PHP_PMD
    ```
+#### Alternative installation using [composer](https://getcomposer.org/):
+1. Install [composer](https://getcomposer.org/).
+2. Install `phpmd` using below command:
+```
+composer global require phpmd/phpmd
+```
+3. Make sure composer global bin directory is available in $PATH
+```
+export PATH=~/.composer/vendor/bin:$PATH
+```
 
 Now you can proceed to install the SublimeLinter-phpmd plugin.
 
