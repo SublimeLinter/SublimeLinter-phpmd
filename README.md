@@ -47,7 +47,7 @@ It is possible to specify the `phpcs` executable that should be used to lint you
     "SublimeLinter": {
         "linters": {
             "phpmd": {
-                "cmd": "${project}/vendor/bin/phpmd"
+                "cmd": "${folder}/vendor/bin/phpmd"
             }
         }
     }
