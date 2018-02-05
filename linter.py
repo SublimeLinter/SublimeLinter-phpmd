@@ -10,7 +10,15 @@
 
 """This module exports the Phpmd plugin class."""
 
-from SublimeLinter.lint import highlight, Linter
+import SublimeLinter
+from SublimeLinter.lint import Linter
+
+if getattr(SublimeLinter.lint, 'VERSION', 3) > 3:
+    from SublimeLinter.lint import const
+    WARNING = const.WARNING
+else:
+    from SublimeLinter.lint import highlight
+    WARNING = highlight.WARNING
 
 
 class Phpmd(Linter):
@@ -23,7 +31,7 @@ class Phpmd(Linter):
         r'(?P<filename>.+):(?P<line>\d+)'
         r'\s*(?P<message>.+)$'
     )
-    default_type = highlight.WARNING
+    default_type = WARNING
     tempfile_suffix = 'php'
     defaults = {
         '@rulesets:,': 'cleancode,codesize,controversial,design,naming,unusedcode'
