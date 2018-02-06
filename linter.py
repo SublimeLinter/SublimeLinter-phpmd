@@ -10,7 +10,7 @@
 
 """This module exports the Phpmd plugin class."""
 
-import SublimeLinter
+import SublimeLinter.lint
 from SublimeLinter.lint import Linter
 
 if getattr(SublimeLinter.lint, 'VERSION', 3) > 3:
