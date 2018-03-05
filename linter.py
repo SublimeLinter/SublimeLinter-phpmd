@@ -10,7 +10,6 @@
 
 """This module exports the Phpmd plugin class."""
 
-import SublimeLinter.lint
 from SublimeLinter.lint import Linter, WARNING
 
 
