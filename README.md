@@ -35,21 +35,7 @@ export PATH=~/.composer/vendor/bin:$PATH
 ```
 
 ## Settings
-- SublimeLinter settings: http://sublimelinter.readthedocs.org/en/latest/settings.html
-- Linter settings: http://sublimelinter.readthedocs.org/en/latest/linter_settings.html
+- SublimeLinter settings: http://sublimelinter.com/en/latest/settings.html
+- Linter settings: http://sublimelinter.com/en/latest/linter_settings.html
 
-### Project Specific Executable
-It is possible to specify the `phpcs` executable that should be used to lint your code on a per-project level.
 
-**Example:**
-```json
-{
-    "SublimeLinter": {
-        "linters": {
-            "phpmd": {
-                "cmd": "${folder}/vendor/bin/phpmd"
-            }
-        }
-    }
-}
-```
