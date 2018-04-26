@@ -2,7 +2,7 @@ from SublimeLinter.lint import Linter, WARNING
 
 
 class Phpmd(Linter):
-    cmd = ('phpmd', '${file}', 'text')
+    cmd = ('phpmd', '${temp_file}', 'text')
     regex = (
         r'(?P<filename>.+):(?P<line>\d+)'
         r'\s*(?P<message>.+)$'
