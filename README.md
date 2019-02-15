@@ -31,18 +31,17 @@ To install `phpmd`, do the following:
 
 1. Install [composer](https://getcomposer.org/).
 2. Install `phpmd` using below command:
-```
-composer global require phpmd/phpmd
-```
+   ```
+   composer global require phpmd/phpmd
+   ```
 3. Make sure composer global bin directory is available in $PATH
-```
-export PATH=~/.composer/vendor/bin:$PATH
-```
-
+   ```
+   export PATH=~/.composer/vendor/bin:$PATH
+   ```
 
 ## Settings
 
+You can specify a ruleset by setting `SublimeLinter.linters.phpmd.rulesets` in User settings or Project settings. The value can be a list of builtin rulesets, or path to a XML file with your custom rulesets. If the value is set to a filename, the first file found in the current directory or its parent directories is used. Default value is `cleancode,codesize,controversial,design,naming,unusedcode`.
+
 - SublimeLinter settings: http://sublimelinter.com/en/latest/settings.html
 - Linter settings: http://sublimelinter.com/en/latest/linter_settings.html
-
-

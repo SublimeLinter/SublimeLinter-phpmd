@@ -29,7 +29,6 @@ class Phpmd(Linter):
         
         if rulesets.endswith(".xml"):
             rulesets_file = self.get_conf_file(rulesets)
-
             if rulesets_file:
                 return ('phpmd', '${temp_file}', 'text', rulesets_file)
 
@@ -40,14 +39,17 @@ class Phpmd(Linter):
 
     def get_conf_file(self, filename):
 
-        if os.path.isfile(filename) and os.path.basename(filename) is not filename:
-            return filename
+        if os.path.basename(filename) is not filename:
+            # Absolute file path
+            return os.path.isfile(filename) and filename
 
         if not self.filename:
+            # The file is not yet saved
             return False
 
         path = os.path.dirname(self.filename)
 
+        # Search for the file in directory tree
         while True:
             newpath = os.path.dirname(path)
 
