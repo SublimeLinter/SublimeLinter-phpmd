@@ -4,8 +4,10 @@ from SublimeLinter.lint import Linter, WARNING
 class Phpmd(Linter):
     cmd = ('phpmd', '${temp_file}', 'text')
     regex = (
-        r'(?P<filename>.+):(?P<line>\d+)'
-        r'\s*(?P<message>.+)$'
+        # For now, do *NOT* capture 'filename' since phpmd reports 'real'
+        # paths, and Sublime and SL cannot map such paths to the original
+        # `view.file_name()`.
+        r'(.+):(?P<line>\d+)\s*(?P<message>.+)$'
     )
     on_stderr = None  # handle stderr via regex
     default_type = WARNING
