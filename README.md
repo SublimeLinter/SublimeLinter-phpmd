@@ -9,36 +9,62 @@ It will be used with files that have the "PHP", "HTML" and "HTML5" syntax.
 
 ## Installation
 
-SublimeLinter must be installed in order to use this plugin. 
+First, install phpmd with Composer or PEAR.
+Then install SublimeLinter and SublimeLinter-phpmd with Package Control.
 
-Please use [Package Control](https://packagecontrol.io) to install the linter plugin.
+### 1. Installing phpmd
 
-Before installing this plugin, ensure that `phpmd` is installed on your system.
-To install `phpmd`, do the following:
+Make sure [PHP](https://www.php.net) is installed.
 
-1. Install [php](http://php.net).
+#### 1.1 Installing phpmd with [Composer](https://getcomposer.org/):
 
-2. Install [pear](http://pear.php.net).
+##### 1.1.1 Local install (within a project)
 
-3. Install `phpmd` by typing the following in a terminal:
-   ```
-   pear channel-discover pear.phpmd.org
-   pear channel-discover pear.pdepend.org
-   pear install --alldeps phpmd/PHP_PMD
-   ```
+1. Install `phpmd` from a command line:
+```
+composer require phpmd/phpmd
+```
+2. Open **Preferences -> Package Settings -> SublimeLinter -> Settings**
+3. Set the `phpmd` executable by adding/editing:
+```
+  "linters": {
+    "phpmd": {
+      "executable": "${folder}/vendor/bin/phpmd"
+    }
+  }
+```
 
-### Alternative installation using [composer](https://getcomposer.org/):
+##### 1.1.2 Global install
 
-1. Install [composer](https://getcomposer.org/).
-2. Install `phpmd` using below command:
+1. Install `phpmd` from a command line:
 ```
 composer global require phpmd/phpmd
 ```
-3. Make sure composer global bin directory is available in $PATH
+2. Make sure the composer global bin directory is available in $PATH
 ```
 export PATH=~/.composer/vendor/bin:$PATH
 ```
 
+#### 1.2 Installing phpmd with [PEAR](https://pear.php.net)
+
+Install `phpmd` from a command line:
+```
+pear channel-discover pear.phpmd.org
+pear channel-discover pear.pdepend.org
+pear install --alldeps phpmd/PHP_PMD
+```
+
+### 2. Installing SublimeLinter
+
+Make sure [Package Control](https://packagecontrol.io) is installed.
+
+1. Open the command palette (Ctrl + Shift + P) and choose **Package Control: Install Package**.
+2. Type **SublimeLinter** and select it.
+
+### 3. Installing SublimeLinter-phpmd
+
+1. Open the command palette (Ctrl + Shift + P) and choose **Package Control: Install Package**.
+2. Type **SublimeLinter-phpmd** and select it.
 
 ## Settings
 
