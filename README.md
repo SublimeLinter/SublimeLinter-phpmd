@@ -13,9 +13,12 @@ It will be used with files that have the "PHP", "HTML" and "HTML5" syntax.
 
 Make sure [Package Control](https://packagecontrol.io) is installed.
 
-Open the command palette (Ctrl + Shift + P) and choose **Package Control: Install Package**. Type **SublimeLinter** and select it. Repeat this for **SublimeLinter-phpmd**.
+1. Open the command palette (Ctrl + Shift + P)
+2. Type **Package Control: Install Package** and select it.
+3. Type **SublimeLinter** and select it.
+4. Repeat steps 1-3 using **SublimeLinter-phpmd** in step 3.
 
-### Install phpmd
+### Install `phpmd`
 
 #### phpmd local install (within a project) with [Composer](https://getcomposer.org/)
 
@@ -34,7 +37,7 @@ Set the `phpmd` executable by adding/editing:
   }
 ```
 
-##### phpmd global install with [Composer](https://getcomposer.org/)
+#### phpmd global install with [Composer](https://getcomposer.org/)
 
 ```bash
 composer global require phpmd/phpmd
