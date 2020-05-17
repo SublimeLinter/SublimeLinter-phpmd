@@ -24,8 +24,9 @@ Choose one of the installation methods below.
 
 A local install allows you to fine-tune `phpmd` on a per-project basis. A global install is available system-wide.
 
-#### local install (available on a per-project basis) with [Composer](https://getcomposer.org/)
+#### local install with [Composer](https://getcomposer.org/)
 
+On a command line inside your project:
 ```bash
 composer require phpmd/phpmd
 ```
