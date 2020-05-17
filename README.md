@@ -16,11 +16,11 @@ Make sure [Package Control](https://packagecontrol.io) is installed.
 1. Open the command palette (Ctrl + Shift + P)
 2. Type **Package Control: Install Package** and select it.
 3. Type **SublimeLinter** and select it.
-4. Repeat steps 1-3 using **SublimeLinter-phpmd** in step 3.
+4. Repeat steps 1-3 typing **SublimeLinter-phpmd** in step 3.
 
 ### Install `phpmd`
 
-#### phpmd local install (within a project) with [Composer](https://getcomposer.org/)
+#### local install (within a project) with [Composer](https://getcomposer.org/)
 
 ```bash
 composer require phpmd/phpmd
@@ -37,7 +37,7 @@ Set the `phpmd` executable by adding/editing:
   }
 ```
 
-#### phpmd global install with [Composer](https://getcomposer.org/)
+#### global install with [Composer](https://getcomposer.org/)
 
 ```bash
 composer global require phpmd/phpmd
@@ -49,7 +49,7 @@ Make sure the composer global bin directory is available in $PATH:
 export PATH=~/.composer/vendor/bin:$PATH
 ```
 
-#### phpmd global install with [PEAR](https://pear.php.net)
+#### global install with [PEAR](https://pear.php.net)
 
 ```bash
 pear channel-discover pear.phpmd.org
