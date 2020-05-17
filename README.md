@@ -9,36 +9,58 @@ It will be used with files that have the "PHP", "HTML" and "HTML5" syntax.
 
 ## Installation
 
-SublimeLinter must be installed in order to use this plugin. 
+### Install `SublimeLinter` and `SublimeLinter-phpmd`
 
-Please use [Package Control](https://packagecontrol.io) to install the linter plugin.
+Make sure [Package Control](https://packagecontrol.io) is installed.
 
-Before installing this plugin, ensure that `phpmd` is installed on your system.
-To install `phpmd`, do the following:
+1. Open the command palette (Ctrl + Shift + P)
+2. Type **Package Control: Install Package** and select it.
+3. Type **SublimeLinter** and select it.
+4. Repeat steps 1-3 typing **SublimeLinter-phpmd** in step 3.
 
-1. Install [php](http://php.net).
+### Install `phpmd`
 
-2. Install [pear](http://pear.php.net).
+Choose one of the installation methods below.
 
-3. Install `phpmd` by typing the following in a terminal:
-   ```
-   pear channel-discover pear.phpmd.org
-   pear channel-discover pear.pdepend.org
-   pear install --alldeps phpmd/PHP_PMD
-   ```
+A local install allows you to fine-tune `phpmd` on a per-project basis. A global install is available system-wide.
 
-### Alternative installation using [composer](https://getcomposer.org/):
+#### local install with [Composer](https://getcomposer.org/)
 
-1. Install [composer](https://getcomposer.org/).
-2. Install `phpmd` using below command:
+On a command line inside your project:
+```bash
+composer require phpmd/phpmd
 ```
+
+Inside Sublime, go to **Preferences -> Package Settings -> SublimeLinter -> Settings**.
+
+Set the `phpmd` executable by adding/editing:
+```json
+  "linters": {
+    "phpmd": {
+      "executable": "${folder}/vendor/bin/phpmd"
+    }
+  }
+```
+
+#### global install with [Composer](https://getcomposer.org/)
+
+```bash
 composer global require phpmd/phpmd
 ```
-3. Make sure composer global bin directory is available in $PATH
-```
+
+Make sure the composer global bin directory is available in $PATH:
+
+```bash
 export PATH=~/.composer/vendor/bin:$PATH
 ```
 
+#### global install with [PEAR](https://pear.php.net)
+
+```bash
+pear channel-discover pear.phpmd.org
+pear channel-discover pear.pdepend.org
+pear install --alldeps phpmd/PHP_PMD
+```
 
 ## Settings
 
