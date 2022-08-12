@@ -13,6 +13,6 @@ class Phpmd(Linter):
     default_type = WARNING
     tempfile_suffix = 'php'
     defaults = {
-        'selector': 'source.php, text.html.basic',
+        'selector': 'embedding.php, source.php',
         '@rulesets:,': 'cleancode,codesize,controversial,design,naming,unusedcode'
     }
