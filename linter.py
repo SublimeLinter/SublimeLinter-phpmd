@@ -16,6 +16,6 @@ class Phpmd(Linter):
     def cmd(self):
         if self.settings['lint_mode'] != 'background':
             self.tempfile_suffix = '-'
-            return ('phpmd', '${file}', 'text')
+            return ('phpmd', '${file_on_disk}', 'text')
 
         return ('phpmd', '${temp_file}', 'text')
