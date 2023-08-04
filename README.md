@@ -65,7 +65,7 @@ pear install --alldeps phpmd/PHP_PMD
 - SublimeLinter settings: http://sublimelinter.com/en/latest/settings.html
 - Linter settings: http://sublimelinter.com/en/latest/linter_settings.html
 
-### rulesets
+### Rulesets
 
 You can configure rules via the `rulesets` setting. This can be a list of rules, or a path to a custom ruleset file.
 
@@ -81,6 +81,18 @@ You can configure rules via the `rulesets` setting. This can be a list of rules,
   "linters": {
     "phpmd": {
       "rulesets": "${folder}/phpmd.xml"
+    }
+  }
+```
+
+### Baseline
+
+If you want to use a baseline file, the linter needs to run on the actual files instead of the temporary files we need for real-time "background" linting. Therefore, set the [lint_mode](http://www.sublimelinter.com/en/stable/linter_settings.html#lint-mode) for phphmd to "load_save", "save" or "manual":
+
+```json
+  "linters": {
+    "phpmd": {
+      "lint_mode": "load_save"
     }
   }
 ```
