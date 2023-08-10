@@ -1,4 +1,4 @@
-from SublimeLinter.lint import Linter, TransientError, WARNING
+from SublimeLinter.lint import Linter, WARNING
 
 
 class Phpmd(Linter):
@@ -13,15 +13,18 @@ class Phpmd(Linter):
         '@rulesets:,': 'cleancode,codesize,controversial,design,naming,unusedcode'
     }
 
+    @classmethod
+    def should_lint(cls, view, settings, reason):
+        # type: (sublime.View, LinterSettings, Reason) -> bool
+        """Decide whether the linter can run at this point in time."""
+        if settings['real_file_mode'] and (
+            view.is_dirty() or not view.file_name()
+        ):
+            return False
+
+        return super().should_lint(cls, view, settings, reason)
+
     def cmd(self):
-        if self.settings['lint_mode'] != 'background':
-            # lint real files only, but only if the buffer is not dirty
-            window = self.view.window()
-            if window and self.view.is_dirty() or not self.view.file_name():
-                window.status_message("phpmd: please save to lint this file")
-                raise TransientError("Abort.  Buffer is dirty.")
-
-            self.tempfile_suffix = '-'
-            return ('phpmd', '${file_on_disk}', 'text')
-
-        return ('phpmd', '${temp_file}', 'text')
+        target = '$file_on_disk' if self.settings['real_file_mode'] else '$temp_file'
+        self.tempfile_suffix = '-' if self.settings['real_file_mode'] else 'php'
+        return ('phpmd', target, 'text')
