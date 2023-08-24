@@ -9,6 +9,7 @@ class Phpmd(Linter):
     default_type = WARNING
     tempfile_suffix = 'php'
     defaults = {
+        'real_file_mode': False,
         'selector': 'embedding.php, source.php',
         '@rulesets:,': 'cleancode,codesize,controversial,design,naming,unusedcode'
     }
@@ -22,7 +23,7 @@ class Phpmd(Linter):
         ):
             return False
 
-        return super().should_lint(cls, view, settings, reason)
+        return super().should_lint(view, settings, reason)
 
     def cmd(self):
         target = '$file_on_disk' if self.settings['real_file_mode'] else '$temp_file'
