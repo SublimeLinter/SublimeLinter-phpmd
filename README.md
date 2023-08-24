@@ -73,7 +73,7 @@ Therefore, set the "real_file_mode" setting to true.
 ```json
 "linters": {
   "phpmd": {
-    "real_file_mode": "codesize,unusedcode,naming"
+    "real_file_mode": true
   }
 }
 ```
