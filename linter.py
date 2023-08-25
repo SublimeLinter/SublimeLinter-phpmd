@@ -2,17 +2,30 @@ from SublimeLinter.lint import Linter, WARNING
 
 
 class Phpmd(Linter):
-    cmd = ('phpmd', '${temp_file}', 'text')
     regex = (
-        # For now, do *NOT* capture 'filename' since phpmd reports 'real'
-        # paths, and Sublime and SL cannot map such paths to the original
-        # `view.file_name()`.
         r'(.+):(?P<line>\d+)\s*(?P<message>.+)$'
     )
     on_stderr = None  # handle stderr via regex
     default_type = WARNING
     tempfile_suffix = 'php'
     defaults = {
+        'real_file_mode': False,
         'selector': 'embedding.php, source.php',
         '@rulesets:,': 'cleancode,codesize,controversial,design,naming,unusedcode'
     }
+
+    @classmethod
+    def should_lint(cls, view, settings, reason):
+        # type: (sublime.View, LinterSettings, Reason) -> bool
+        """Decide whether the linter can run at this point in time."""
+        if settings['real_file_mode'] and (
+            view.is_dirty() or not view.file_name()
+        ):
+            return False
+
+        return super().should_lint(view, settings, reason)
+
+    def cmd(self):
+        target = '$file_on_disk' if self.settings['real_file_mode'] else '$temp_file'
+        self.tempfile_suffix = '-' if self.settings['real_file_mode'] else 'php'
+        return ('phpmd', target, 'text')

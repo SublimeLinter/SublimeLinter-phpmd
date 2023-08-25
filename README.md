@@ -1,8 +1,6 @@
 SublimeLinter-phpmd
 =========================
 
-[![Build Status](https://travis-ci.org/SublimeLinter/SublimeLinter-phpmd.svg?branch=master)](https://travis-ci.org/SublimeLinter/SublimeLinter-phpmd)
-
 This linter plugin for [SublimeLinter](https://github.com/SublimeLinter/SublimeLinter) provides an interface to [phpmd](http://phpmd.org/documentation/index.html).
 It will be used with files that have the "PHP", "HTML" and "HTML5" syntax.
 
@@ -67,4 +65,35 @@ pear install --alldeps phpmd/PHP_PMD
 - SublimeLinter settings: http://sublimelinter.com/en/latest/settings.html
 - Linter settings: http://sublimelinter.com/en/latest/linter_settings.html
 
+### Additional settings
 
+If you want to use a baseline file, the linter needs to run on the actual files instead of the temporary files we need for real-time "background" linting. 
+Therefore, set the "real_file_mode" setting to true.
+
+```json
+"linters": {
+  "phpmd": {
+    "real_file_mode": true
+  }
+}
+```
+
+### Rulesets
+
+You can configure rules via the `rulesets` setting. This can be a list of rules, or a path to a custom ruleset file.
+
+```json
+  "linters": {
+    "phpmd": {
+      "rulesets": "codesize,unusedcode,naming"
+    }
+  }
+```
+
+```json
+  "linters": {
+    "phpmd": {
+      "rulesets": "${folder}/phpmd.xml"
+    }
+  }
+```
