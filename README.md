@@ -22,7 +22,7 @@ Choose one of the installation methods below.
 
 A local install allows you to fine-tune `phpmd` on a per-project basis. A global install is available system-wide.
 
-#### local install with [Composer](https://getcomposer.org/)
+#### Local install with [Composer](https://getcomposer.org/)
 
 On a command line inside your project:
 ```bash
@@ -40,7 +40,7 @@ Set the `phpmd` executable by adding/editing:
   }
 ```
 
-#### global install with [Composer](https://getcomposer.org/)
+#### Global install with [Composer](https://getcomposer.org/)
 
 ```bash
 composer global require phpmd/phpmd
@@ -52,7 +52,7 @@ Make sure the composer global bin directory is available in $PATH:
 export PATH=~/.composer/vendor/bin:$PATH
 ```
 
-#### global install with [PEAR](https://pear.php.net)
+#### Global install with [PEAR](https://pear.php.net)
 
 ```bash
 pear channel-discover pear.phpmd.org
