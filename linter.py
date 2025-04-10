@@ -1,7 +1,7 @@
-from SublimeLinter.lint import ComposerLinter, WARNING
+from SublimeLinter.lint import PhpLinter, WARNING
 
 
-class Phpmd(ComposerLinter):
+class Phpmd(PhpLinter):
     regex = (
         r'(.+):(?P<line>\d+)\s*(?P<message>.+)$'
     )
