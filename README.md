@@ -29,17 +29,6 @@ On a command line inside your project:
 composer require phpmd/phpmd
 ```
 
-Inside Sublime, go to **Preferences -> Package Settings -> SublimeLinter -> Settings**.
-
-Set the `phpmd` executable by adding/editing:
-```json
-  "linters": {
-    "phpmd": {
-      "executable": "${folder}/vendor/bin/phpmd"
-    }
-  }
-```
-
 #### Global install with [Composer](https://getcomposer.org/)
 
 ```bash
